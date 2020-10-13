@@ -85,5 +85,11 @@ func main() {
 
 	res := <-result
 	fmt.Printf("Chain found with extid %s: %x (in %s)\n", res, calculateID(res), time.Since(start))
-	fmt.Println("ExtIDs:", append(split, string(res)))
+	fmt.Print("ExtIDs: ")
+
+	for _, s := range split {
+		fmt.Printf("\"%s\" ", s)
+	}
+	fmt.Printf("\"%s\"\n", res)
+
 }
